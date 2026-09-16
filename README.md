@@ -1,18 +1,31 @@
 # EdgeChat — offline, on-device AI chat for iPhone
 
+[![CI](https://github.com/RishikeshAluguvelli/EdgeChat/actions/workflows/ci.yml/badge.svg)](https://github.com/RishikeshAluguvelli/EdgeChat/actions/workflows/ci.yml)
+![Swift 5.10](https://img.shields.io/badge/Swift-5.10-F05138?logo=swift&logoColor=white)
+![iOS 17+](https://img.shields.io/badge/iOS-17%2B-000?logo=apple&logoColor=white)
+![llama.cpp b10988](https://img.shields.io/badge/llama.cpp-b10988-6f42c1)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 A ChatGPT/Claude-style iOS app where **everything runs on the phone**: model inference
 (llama.cpp + Metal), document reading (PDFKit), OCR (Vision) and image understanding
 (llama.cpp `mtmd` vision encoder). No server, no account, no network: airplane mode works.
 
-<p align="center">
-  <img src="docs/screenshots/chat.png" width="230" alt="A chat with a rendered Markdown reply, tokens/s stats and the context-usage ring">
-  <img src="docs/screenshots/chats.png" width="230" alt="Conversation list">
-  <img src="docs/screenshots/models.png" width="230" alt="Model catalog with downloads and delete">
-  <img src="docs/screenshots/settings.png" width="230" alt="Settings: context length, KV cache cost, long-conversation toggles">
-</p>
+![EdgeChat screens: chat with a rendered Markdown reply, conversation list, model catalog, settings](docs/screenshots/hero.png)
 
-<sub>Replies in the first screenshot were generated on an iPhone 15 Plus by Qwen3-VL 2B (Q4_K_M) at 20–30 tokens/s; the
-stats line under each reply is real. Screens captured in the iOS Simulator.</sub>
+<sub>Replies in the chat screen were generated on an iPhone 15 Plus by Qwen3-VL 2B (Q4_K_M); the stats line under each
+reply is real. Screens captured in the iOS Simulator.</sub>
+
+## Measured on an iPhone 15 Plus (A16, 6 GB)
+
+Qwen3-VL 2B Instruct, Q4_K_M, 4k context, Metal. Numbers are from the app's own per-turn log across 54 turns of real use.
+
+| | |
+|---|---|
+| Decode speed | **15–32 tok/s** (median 24) |
+| Prompt prefill | **140–570 tok/s** for fresh text; a 768 px photo (≈576 tokens) takes ≈7 s through the vision encoder |
+| KV-prefix reuse on follow-up turns | **95–99 %** of the prompt served from cache, so a follow-up costs a few hundred tokens of prefill, not the whole history |
+| Photo cost | ≈576 KV cells at 768 px (≈1,000 at 1,024 px); this, not text, is what fills a 4k window |
+| Longest single reply | 1,014 tokens without a length cap |
 
 ## Highlights
 
@@ -26,6 +39,31 @@ stats line under each reply is real. Screens captured in the iOS Simulator.</sub
   the toolbar shows how full the context window is; a diagnostics log can be shared from Settings.
 * **Same engine on macOS.** `EdgeChatCore` is a SwiftPM package with a CLI and tests, so the inference path can be
   developed and tested on a Mac before touching the phone.
+
+## Engineering notes: the hard parts
+
+Things that were not obvious and are worth reading the code for.
+
+1. **Context budgets must count KV cells, not RoPE positions.** Qwen3-VL uses M-RoPE: a photo advances the
+   position counter by a handful but occupies hundreds of KV cells. Budgeting by positions let the cache overflow
+   silently mid-reply; the fix threads a `cells` count through every prompt unit (`LlamaEngine.PromptUnit`) and is
+   locked in by `MRopeVisionTests`.
+2. **Resume a reply without restarting it.** "Continue" re-sends the partial answer as an *open* assistant turn: the
+   chat template is applied with a sentinel appended to the partial text and the formatted prompt is cut at the
+   sentinel, so whatever the template would add to close the turn is dropped and the KV prefix still matches
+   (35 of 36 prompt tokens cached in the test).
+3. **Never let a library abort your process.** `llama_state_seq_load_file` hard-asserts when a stored state does
+   not match the current context, which killed the app on every send in an affected chat. Snapshots now use our own
+   validated container around the buffer API (`llama_state_seq_get/set_data`), which returns 0 instead. Damaged
+   files are rejected and deleted; a test feeds it truncated, padded and garbage files.
+4. **Retrieval that small models can survive.** A 2B model re-answers anything you inject. Recall is skipped for
+   acknowledgements, capped at four snippets, requires lexical overlap or a clear embedding-spread winner, and is
+   labelled "background only" in the prompt.
+5. **Compaction before the window fills.** Summarizing when the next message no longer fits delays that message by
+   30–60 s on a phone. Summarizing in the background once a reply leaves the window ≥75 % full hides the cost.
+6. **Main-thread discipline on iOS.** `llama_backend_init` compiles Metal shaders; doing it on the main thread at
+   launch tripped the watchdog and produced a blank app. Backend init is lazy on the engine queue, disk writes are
+   serial and off the main thread, and long-chat rendering is memoized (`MarkdownText` block cache, `Equatable` rows).
 
 ## Try it
 
@@ -169,6 +207,12 @@ App/project.yml                xcodegen spec → App/EdgeChat.xcodeproj
 App/EdgeChat/                  SwiftUI app
 Frameworks/llama.xcframework   prebuilt llama.cpp (gitignored; scripts/setup-llama.sh)
 ```
+
+## Status and roadmap
+
+Working end to end on a physical iPhone; this is a personal project, not a product. Next up, roughly in order:
+thinking-mode toggle in the composer for Qwen3 hybrids, streaming Markdown tables, iCloud-free chat export,
+and an App Store/TestFlight build once a paid developer membership is in place.
 
 ## License
 

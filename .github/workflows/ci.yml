@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-test:
+    name: swift build + unit tests (macOS)
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select Xcode
+        run: |
+          XC=$(ls -d /Applications/Xcode_16*.app 2>/dev/null | sort -V | tail -1)
+          [ -n "$XC" ] && sudo xcode-select -s "$XC"
+          xcodebuild -version
+      - name: Cache llama.cpp xcframework
+        id: llama-cache
+        uses: actions/cache@v4
+        with:
+          path: Frameworks/llama.xcframework
+          key: llama-xcframework-b10988
+      - name: Fetch llama.cpp xcframework
+        if: steps.llama-cache.outputs.cache-hit != 'true'
+        run: scripts/setup-llama.sh
+      - name: Build package and CLI
+        run: swift build -c release
+      - name: Unit tests (engine tests skip without model files)
+        run: swift test
