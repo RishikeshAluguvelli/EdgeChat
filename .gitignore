@@ -19,3 +19,16 @@ Models/
 
 # OS
 .DS_Store
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/app/.cxx/
+android/local.properties
+android/keystore.properties
+android/*.jks
+android/*.keystore
+android/third_party/
+android/.idea/
+android/captures/

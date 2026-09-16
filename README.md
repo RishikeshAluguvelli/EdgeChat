@@ -67,9 +67,12 @@ Things that were not obvious and are worth reading the code for.
 
 ## Try it
 
-EdgeChat is **not on the App Store yet** (that needs a paid Apple Developer membership and App Review). Until then it
-is a build-from-source project: follow [Build & run](#build--run) below, which takes about ten minutes on a Mac with
-Xcode. When an App Store or TestFlight link exists it will be added here.
+**Android:** a signed release bundle is built from `android/` (see [Android](#android) below); the Play Store listing,
+privacy policy and data-safety answers are ready in [docs/play-listing.md](docs/play-listing.md). It goes live on
+Google Play once the developer account is set up; until then, build the APK from source or ask for the internal-test link.
+
+**iPhone:** not on the App Store yet (that needs a paid Apple Developer membership and App Review). Follow
+[Build & run](#build--run) below, which takes about ten minutes on a Mac with Xcode.
 
 ## Which model?
 
@@ -164,6 +167,31 @@ xcrun devicectl device install app --device <your-device-id> \
 Then open Models, download a model that fits your phone (the catalog marks the recommended one),
 and start chatting. Photos and files attach from the composer's `+` button.
 
+## Android
+
+The same app for Android, in `android/`: Kotlin + Jetpack Compose over a C++ port of the engine
+(`android/app/src/main/cpp/edgechat_engine.cpp`, a line-for-line port of `LlamaEngine.swift`) built with the NDK
+against the same llama.cpp release. Everything above applies: KV-prefix reuse, cell-based budgets, unlimited replies
+with resume, background compaction, retrieval, KV snapshots (same on-disk format), photos through `mtmd`, PDFs through
+PDFBox with ML Kit OCR for scans. Inference is CPU-only for now (ARM NEON, dotprod and i8mm kernels picked at runtime);
+a Vulkan/OpenCL build is on the roadmap.
+
+<p align="center">
+  <img src="docs/screenshots/android-chat.png" width="230" alt="Android chat screen">
+  <img src="docs/screenshots/android-models.png" width="230" alt="Android model catalog">
+</p>
+
+```bash
+scripts/setup-llama-android.sh          # clones llama.cpp b10988 into android/third_party/
+cd android && ./gradlew :app:assembleDebug   # needs Android SDK 35, NDK 27, CMake 3.22 (sdkmanager)
+adb install app/build/outputs/apk/debug/app-debug.apk
+```
+
+Release builds read `android/keystore.properties` (gitignored) for the upload key and produce
+`app/build/outputs/bundle/release/app-release.aab` via `./gradlew :app:bundleRelease`. Debug builds accept
+`adb shell am start -n com.rishikesh.edgechat.debug/com.rishikesh.edgechat.MainActivity --es autoPrompt 'a ||| b' --ei autoContext 1024`
+to script a conversation, like the iOS Simulator flags.
+
 ### Test the engine from the terminal (macOS, same code path)
 
 ```bash
@@ -206,6 +234,9 @@ Tests/EdgeChatCoreTests/       engine (cache reuse, truncation, cancel, vision) 
 App/project.yml                xcodegen spec → App/EdgeChat.xcodeproj
 App/EdgeChat/                  SwiftUI app
 Frameworks/llama.xcframework   prebuilt llama.cpp (gitignored; scripts/setup-llama.sh)
+android/                       Android app: Kotlin/Compose UI, C++ engine + JNI (app/src/main/cpp), Gradle
+android/third_party/llama.cpp  llama.cpp source for the NDK build (gitignored; scripts/setup-llama-android.sh)
+docs/                          screenshots, privacy policy, Play Store listing
 ```
 
 ## Status and roadmap
