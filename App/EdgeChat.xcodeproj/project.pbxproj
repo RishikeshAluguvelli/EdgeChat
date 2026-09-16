@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B34AA073F11E7B0BB6F5E45 /* ComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFC297C079D7D4964F0BADD /* ComposerView.swift */; };
+		19B939374BC6FB3E4007C0E2 /* EdgeChatCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5913B1F911B72A8C88898808 /* EdgeChatCore */; };
+		256CE78BE1CD7DF3CCC8BD55 /* ConversationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF015F45140499D59D25F6 /* ConversationStore.swift */; };
+		2B27F8DA8BA7EE1EC732D66C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD104F851968528B7438681 /* SettingsView.swift */; };
+		2FD834FCA569B5B32CA98C49 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAFF235D4844E240C95DCEA /* ChatView.swift */; };
+		3D1C82041FA8AAEBAA6CA05E /* ModelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691A726AC3E2278C96FC697 /* ModelsView.swift */; };
+		44D254E3F77161A33D1BE16B /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57926F3D1F0697A0A68BF5EB /* AppModel.swift */; };
+		593F79D5186573DB874ABC5E /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC6B75B09366EB1BBA829A1 /* ModelManager.swift */; };
+		5FB01A18A6236CC732FC7BBF /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468D699733156AAF9D15521 /* AppSettings.swift */; };
+		6052B28E9A71120775AB0044 /* AttachmentViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61CCF62BBC7862EE18FAFBE /* AttachmentViews.swift */; };
+		6AF3B601F21DE817E868344A /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86142BEB100543CC14EF93B /* MessageRow.swift */; };
+		7A3ACE73C0D4B79D41D3B8EA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271B833E511BA60E8EE59454 /* RootView.swift */; };
+		7D24F4DFE91F75B42F61488A /* EngineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA330F560280EDFE1130CA57 /* EngineController.swift */; };
+		840B60C9CB232D640800745B /* AttachmentIngest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E505521BF0E4779225CC989B /* AttachmentIngest.swift */; };
+		9DCA140BC795E7DE5BC78562 /* MarkdownText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909F619A028CC2A0BD9D112 /* MarkdownText.swift */; };
+		B3EAF86467394F373406BBFA /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D728B4555F751C1084D67D53 /* DownloadManager.swift */; };
+		D0BD07C3B6D4310D1C76CE5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CEAEADDCBA0F3B81A902FA7 /* Assets.xcassets */; };
+		D9B353E2AE32E45294BFE936 /* EdgeChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D7EE7AC72F9430E0BF7252 /* EdgeChatApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0468D699733156AAF9D15521 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		0CEAEADDCBA0F3B81A902FA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1909F619A028CC2A0BD9D112 /* MarkdownText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownText.swift; sourceTree = "<group>"; };
+		271B833E511BA60E8EE59454 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		3BAFF235D4844E240C95DCEA /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		41EF015F45140499D59D25F6 /* ConversationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationStore.swift; sourceTree = "<group>"; };
+		57926F3D1F0697A0A68BF5EB /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		835E6CC6B9CC18314EFA5274 /* MobileInference */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MobileInference; path = ..; sourceTree = SOURCE_ROOT; };
+		8AD104F851968528B7438681 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8B6C0F2195B57C722C461CD0 /* EdgeChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EdgeChat.entitlements; sourceTree = "<group>"; };
+		9691A726AC3E2278C96FC697 /* ModelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsView.swift; sourceTree = "<group>"; };
+		99D7EE7AC72F9430E0BF7252 /* EdgeChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeChatApp.swift; sourceTree = "<group>"; };
+		ABFC297C079D7D4964F0BADD /* ComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerView.swift; sourceTree = "<group>"; };
+		B61CCF62BBC7862EE18FAFBE /* AttachmentViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentViews.swift; sourceTree = "<group>"; };
+		CA330F560280EDFE1130CA57 /* EngineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineController.swift; sourceTree = "<group>"; };
+		CBC6B75B09366EB1BBA829A1 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		D65D217D573760D7B0F1FB4F /* EdgeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EdgeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D728B4555F751C1084D67D53 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		E505521BF0E4779225CC989B /* AttachmentIngest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentIngest.swift; sourceTree = "<group>"; };
+		F86142BEB100543CC14EF93B /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25F0DABE93AFD4400613ED5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19B939374BC6FB3E4007C0E2 /* EdgeChatCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		012129DBAE4464D5E4F0E417 /* EdgeChat */ = {
+			isa = PBXGroup;
+			children = (
+				0CEAEADDCBA0F3B81A902FA7 /* Assets.xcassets */,
+				8B6C0F2195B57C722C461CD0 /* EdgeChat.entitlements */,
+				99D7EE7AC72F9430E0BF7252 /* EdgeChatApp.swift */,
+				9F2A683F0A48A5AA51DE76C5 /* Model */,
+				0E455E44740533FC7AE9F32B /* Services */,
+				F2940A909F9D18874940F8AF /* Views */,
+			);
+			path = EdgeChat;
+			sourceTree = "<group>";
+		};
+		0E455E44740533FC7AE9F32B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E505521BF0E4779225CC989B /* AttachmentIngest.swift */,
+				41EF015F45140499D59D25F6 /* ConversationStore.swift */,
+				D728B4555F751C1084D67D53 /* DownloadManager.swift */,
+				CA330F560280EDFE1130CA57 /* EngineController.swift */,
+				CBC6B75B09366EB1BBA829A1 /* ModelManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		469004A7C4274F95173FCC10 = {
+			isa = PBXGroup;
+			children = (
+				012129DBAE4464D5E4F0E417 /* EdgeChat */,
+				EBCD56EF1241D21A1C3A339D /* Packages */,
+				DC9295902AFE35D8F8C8AF31 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F2A683F0A48A5AA51DE76C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57926F3D1F0697A0A68BF5EB /* AppModel.swift */,
+				0468D699733156AAF9D15521 /* AppSettings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC9295902AFE35D8F8C8AF31 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D65D217D573760D7B0F1FB4F /* EdgeChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBCD56EF1241D21A1C3A339D /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				835E6CC6B9CC18314EFA5274 /* MobileInference */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		F2940A909F9D18874940F8AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B61CCF62BBC7862EE18FAFBE /* AttachmentViews.swift */,
+				3BAFF235D4844E240C95DCEA /* ChatView.swift */,
+				ABFC297C079D7D4964F0BADD /* ComposerView.swift */,
+				1909F619A028CC2A0BD9D112 /* MarkdownText.swift */,
+				F86142BEB100543CC14EF93B /* MessageRow.swift */,
+				9691A726AC3E2278C96FC697 /* ModelsView.swift */,
+				271B833E511BA60E8EE59454 /* RootView.swift */,
+				8AD104F851968528B7438681 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E14881BA4F0D9A58B824ACC9 /* EdgeChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59DC72C8178279DD84DB80FC /* Build configuration list for PBXNativeTarget "EdgeChat" */;
+			buildPhases = (
+				DB17B36B6C7D70D3032BB22A /* Sources */,
+				9B51E8DFB584F3434DAE675A /* Resources */,
+				25F0DABE93AFD4400613ED5B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EdgeChat;
+			packageProductDependencies = (
+				5913B1F911B72A8C88898808 /* EdgeChatCore */,
+			);
+			productName = EdgeChat;
+			productReference = D65D217D573760D7B0F1FB4F /* EdgeChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D6E77DC5D9434B592EE6C8F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					E14881BA4F0D9A58B824ACC9 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9EFF261513522733FD2B4AF5 /* Build configuration list for PBXProject "EdgeChat" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 469004A7C4274F95173FCC10;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				93BFEB15B57E20A7A8A192C0 /* XCLocalSwiftPackageReference ".." */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = DC9295902AFE35D8F8C8AF31 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E14881BA4F0D9A58B824ACC9 /* EdgeChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B51E8DFB584F3434DAE675A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0BD07C3B6D4310D1C76CE5E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB17B36B6C7D70D3032BB22A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44D254E3F77161A33D1BE16B /* AppModel.swift in Sources */,
+				5FB01A18A6236CC732FC7BBF /* AppSettings.swift in Sources */,
+				840B60C9CB232D640800745B /* AttachmentIngest.swift in Sources */,
+				6052B28E9A71120775AB0044 /* AttachmentViews.swift in Sources */,
+				2FD834FCA569B5B32CA98C49 /* ChatView.swift in Sources */,
+				0B34AA073F11E7B0BB6F5E45 /* ComposerView.swift in Sources */,
+				256CE78BE1CD7DF3CCC8BD55 /* ConversationStore.swift in Sources */,
+				B3EAF86467394F373406BBFA /* DownloadManager.swift in Sources */,
+				D9B353E2AE32E45294BFE936 /* EdgeChatApp.swift in Sources */,
+				7D24F4DFE91F75B42F61488A /* EngineController.swift in Sources */,
+				9DCA140BC795E7DE5BC78562 /* MarkdownText.swift in Sources */,
+				6AF3B601F21DE817E868344A /* MessageRow.swift in Sources */,
+				593F79D5186573DB874ABC5E /* ModelManager.swift in Sources */,
+				3D1C82041FA8AAEBAA6CA05E /* ModelsView.swift in Sources */,
+				7A3ACE73C0D4B79D41D3B8EA /* RootView.swift in Sources */,
+				2B27F8DA8BA7EE1EC732D66C /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1E69C1E7D5FF91AB582AAD7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.10;
+			};
+			name = Debug;
+		};
+		AA4162FC9D283126E1404996 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.10;
+			};
+			name = Release;
+		};
+		CDB41697F69913CB0B36B3A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EdgeChat/EdgeChat.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4J6HRDQT39;
+				INFOPLIST_FILE = EdgeChat/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rishikesh.edgechat;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F88215532EED0F52875CFE8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EdgeChat/EdgeChat.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4J6HRDQT39;
+				INFOPLIST_FILE = EdgeChat/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rishikesh.edgechat;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59DC72C8178279DD84DB80FC /* Build configuration list for PBXNativeTarget "EdgeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F88215532EED0F52875CFE8B /* Debug */,
+				CDB41697F69913CB0B36B3A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9EFF261513522733FD2B4AF5 /* Build configuration list for PBXProject "EdgeChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E69C1E7D5FF91AB582AAD7E /* Debug */,
+				AA4162FC9D283126E1404996 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		93BFEB15B57E20A7A8A192C0 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5913B1F911B72A8C88898808 /* EdgeChatCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EdgeChatCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 6D6E77DC5D9434B592EE6C8F /* Project object */;
+}

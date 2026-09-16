@@ -1,0 +1,21 @@
+# Xcode / SwiftPM
+.build/
+.swiftpm/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+App/EdgeChat.xcodeproj/project.xcworkspace/xcuserdata/
+Package.resolved
+
+# Prebuilt llama.cpp binaries (fetched by scripts/setup-llama.sh)
+Frameworks/llama.xcframework/
+Frameworks/*.zip
+Frameworks/build-*/
+
+# Models (multi-GB, download in-app)
+Models/
+*.gguf
+
+# OS
+.DS_Store
