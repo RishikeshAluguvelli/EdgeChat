@@ -71,8 +71,9 @@ Things that were not obvious and are worth reading the code for.
 privacy policy and data-safety answers are ready in [docs/play-listing.md](docs/play-listing.md). It goes live on
 Google Play once the developer account is set up; until then, build the APK from source or ask for the internal-test link.
 
-**iPhone:** not on the App Store yet (that needs a paid Apple Developer membership and App Review). Follow
-[Build & run](#build--run) below, which takes about ten minutes on a Mac with Xcode.
+**iPhone:** not on the App Store yet (that needs a paid Apple Developer membership and App Review; the archive,
+listing text, privacy manifest and review notes are ready in [docs/app-store-listing.md](docs/app-store-listing.md)).
+Until then, follow [Build & run](#build--run) below, which takes about ten minutes on a Mac with Xcode.
 
 ## Which model?
 

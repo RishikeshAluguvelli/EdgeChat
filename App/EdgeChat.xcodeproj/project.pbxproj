@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B34AA073F11E7B0BB6F5E45 /* ComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFC297C079D7D4964F0BADD /* ComposerView.swift */; };
 		19B939374BC6FB3E4007C0E2 /* EdgeChatCore in Frameworks */ = {isa = PBXBuildFile; productRef = 5913B1F911B72A8C88898808 /* EdgeChatCore */; };
+		1B23177FCD262B241107378F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CB6A8FDFD3BD4A85707D0A72 /* PrivacyInfo.xcprivacy */; };
 		256CE78BE1CD7DF3CCC8BD55 /* ConversationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF015F45140499D59D25F6 /* ConversationStore.swift */; };
 		2B27F8DA8BA7EE1EC732D66C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD104F851968528B7438681 /* SettingsView.swift */; };
 		2FD834FCA569B5B32CA98C49 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAFF235D4844E240C95DCEA /* ChatView.swift */; };
@@ -43,8 +44,9 @@
 		ABFC297C079D7D4964F0BADD /* ComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerView.swift; sourceTree = "<group>"; };
 		B61CCF62BBC7862EE18FAFBE /* AttachmentViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentViews.swift; sourceTree = "<group>"; };
 		CA330F560280EDFE1130CA57 /* EngineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineController.swift; sourceTree = "<group>"; };
+		CB6A8FDFD3BD4A85707D0A72 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		CBC6B75B09366EB1BBA829A1 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
-		D65D217D573760D7B0F1FB4F /* EdgeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EdgeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D65D217D573760D7B0F1FB4F /* EdgeChat.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = EdgeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D728B4555F751C1084D67D53 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		E505521BF0E4779225CC989B /* AttachmentIngest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentIngest.swift; sourceTree = "<group>"; };
 		F86142BEB100543CC14EF93B /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				0CEAEADDCBA0F3B81A902FA7 /* Assets.xcassets */,
 				8B6C0F2195B57C722C461CD0 /* EdgeChat.entitlements */,
 				99D7EE7AC72F9430E0BF7252 /* EdgeChatApp.swift */,
+				CB6A8FDFD3BD4A85707D0A72 /* PrivacyInfo.xcprivacy */,
 				9F2A683F0A48A5AA51DE76C5 /* Model */,
 				0E455E44740533FC7AE9F32B /* Services */,
 				F2940A909F9D18874940F8AF /* Views */,
@@ -169,6 +172,7 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					E14881BA4F0D9A58B824ACC9 = {
+						DevelopmentTeam = 4J6HRDQT39;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -201,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0BD07C3B6D4310D1C76CE5E /* Assets.xcassets in Resources */,
+				1B23177FCD262B241107378F /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +275,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4J6HRDQT39;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -338,6 +344,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4J6HRDQT39;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -369,14 +376,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = EdgeChat/EdgeChat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4J6HRDQT39;
 				INFOPLIST_FILE = EdgeChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rishikesh.edgechat;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
@@ -391,14 +394,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = EdgeChat/EdgeChat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4J6HRDQT39;
 				INFOPLIST_FILE = EdgeChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rishikesh.edgechat;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
